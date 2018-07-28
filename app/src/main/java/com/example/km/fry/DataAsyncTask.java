@@ -30,7 +30,7 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
     public String str_unhappy = null;
     public String str_uv = null;
     public String str_poison = null;
-
+    ArrayList<ItemInfo> list;
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -39,7 +39,7 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
     @Override
     protected ArrayList<ItemInfo> doInBackground(String... params) {
         dong_code = params[0];
-        ArrayList<ItemInfo> list = new ArrayList<ItemInfo>();
+        list = new ArrayList<ItemInfo>();
 
         try{
             // XML 데이터를 읽어옴
@@ -107,7 +107,25 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
                     case XmlPullParser.END_TAG:
                         tag = parser.getName();
                         if(tag.compareTo("data") == 0 && start) {
-                            list.add(new ItemInfo(str_degree, str_humidity, str_hour,"","",""));
+
+                            String str_trans_hour="";
+                            int hour = Integer.parseInt(str_hour);
+
+
+                            //24:오전12시(새벽)
+                            if(hour==24 || hour < 12) {
+                                str_trans_hour="오전 ";
+                            } else {
+                                str_trans_hour="오후 ";
+                            }
+
+                            if(hour>12) {
+                                hour=hour-12;
+                            }
+
+                            str_trans_hour = str_trans_hour+String.valueOf(hour);
+
+                            list.add(new ItemInfo(str_degree+"˚", str_humidity+"%", str_trans_hour,"","",""));
 
                             start = false;
                         }
@@ -126,15 +144,11 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
             }while(parserEvent != XmlPullParser.END_DOCUMENT);
 
             // 요기서부터는 불쾌지수, uv, 식중독
-            long now = System.currentTimeMillis();
-            Date date = new Date(now);
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhh");
-            String getTime = sdf.format(date);
-            Log.d("time: ", getTime);
-
-
+            parseUnhappy();
+            parseUv();
+            parsePoison();
             /*
-            str_unhappy = parseData("http://newsky2.kma.go.kr/iros/RetrieveLifeIndexService3/getDsplsLifeList?serviceKey=EDAdMbBt6oyqU%2Be1GHKvAlz2aKPTixIEFnbXt4YkpD1MX0xtNbbFYwx81xYdUbR0CzYPDtzT%2FChX0sz4%2BLZjzA%3D%3D&areaNo="+dong_code+"&time="+getTime,
+            str_unhapy = parseData("http://newsky2.kma.go.kr/iros/RetrieveLifeIndexService3/getDsplsLifeList?serviceKey=EDAdMbBt6oyqU%2Be1GHKvAlz2aKPTixIEFnbXt4YkpD1MX0xtNbbFYwx81xYdUbR0CzYPDtzT%2FChX0sz4%2BLZjzA%3D%3D&areaNo="+dong_code+"&time="+getTime,
                     "h3");*/
 
 
@@ -147,10 +161,17 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
         return list;
     }
 
-    // url, 태그로 파싱해오기~
-    public String parseData(String str_url, String tag) {
+    // 불쾌지수
+    public void parseUnhappy() {
         String ret="";
         try {
+            long now = System.currentTimeMillis();
+            Date date = new Date(now);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhh");
+            String getTime = sdf.format(date);
+            Log.d("time: ", getTime);
+
+            String str_url = ("http://newsky2.kma.go.kr/iros/RetrieveLifeIndexService3/getDsplsLifeList?serviceKey=EDAdMbBt6oyqU%2Be1GHKvAlz2aKPTixIEFnbXt4YkpD1MX0xtNbbFYwx81xYdUbR0CzYPDtzT%2FChX0sz4%2BLZjzA%3D%3D&areaNo="+dong_code+"&time="+getTime);
             URL url = new URL(str_url);
             InputStream in = url.openStream();
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
@@ -159,26 +180,26 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
             int parserEvent = parser.getEventType();
 
             boolean start = false;
-
+            String tag=null;
+            int cnt=0;
             do{
                 switch(parserEvent)
                 {
+
                     case XmlPullParser.START_TAG:
                         tag = parser.getName();
-
-                        if(tag.compareTo(tag)==0) {
-                            start = true;
-                        }
-
                         break;
                     case XmlPullParser.TEXT:
-                        if(start) {
-                            ret = parser.getText();
+                        if(start==true && cnt < 17 && list.get(cnt)!=null) {
+                            list.get(cnt).setUnhappy(parser.getText());
+                            Log.d("unhappy: ", parser.getText());
+                            cnt++;
                         }
                         break;
                     case XmlPullParser.END_TAG:
-                        if(start) {
-                            start = false;
+                        tag = parser.getName();
+                        if(tag.compareTo("date")==0) {
+                            start = true;
                         }
                         break;
                 }
@@ -188,8 +209,113 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
         }catch(Exception e) {
             //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
+    }
 
-        return ret;
+
+    //uv
+    public void parseUv() {
+        String ret="";
+        try {
+            long now = System.currentTimeMillis();
+            Date date = new Date(now);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhh");
+            String getTime = sdf.format(date);
+            Log.d("time: ", getTime);
+
+            String str_url = ("http://newsky2.kma.go.kr/iros/RetrieveLifeIndexService3/getUltrvLifeList?serviceKey=EDAdMbBt6oyqU%2Be1GHKvAlz2aKPTixIEFnbXt4YkpD1MX0xtNbbFYwx81xYdUbR0CzYPDtzT%2FChX0sz4%2BLZjzA%3D%3D&areaNo="+dong_code+"&time="+getTime);
+            URL url = new URL(str_url);
+            InputStream in = url.openStream();
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+            XmlPullParser parser = factory.newPullParser();
+            parser.setInput(in, "utf-8");
+            int parserEvent = parser.getEventType();
+
+            boolean start = false;
+            String tag=null;
+            int cnt=0;
+            do{
+                switch(parserEvent)
+                {
+
+                    case XmlPullParser.START_TAG:
+                        tag = parser.getName();
+                        break;
+                    case XmlPullParser.TEXT:
+                        if(start==true && list.get(cnt)!=null) {
+                            for(int i=0; i<6; i++) {
+                                list.get(i+cnt).setUv(parser.getText());
+                            }
+                            cnt+=6;
+
+                            Log.d("uv: ", parser.getText());
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        tag = parser.getName();
+                        if(tag.compareTo("date")==0) {
+                            start = true;
+                        }
+                        break;
+                }
+                parserEvent = parser.next(); // 다음 태그로 이동하기
+            }while(parserEvent != XmlPullParser.END_DOCUMENT);
+
+        }catch(Exception e) {
+            //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //poison
+    public void parsePoison() {
+        String ret="";
+        try {
+            long now = System.currentTimeMillis();
+            Date date = new Date(now);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhh");
+            String getTime = sdf.format(date);
+            Log.d("time: ", getTime);
+
+            String str_url = ("http://newsky2.kma.go.kr/iros/RetrieveLifeIndexService3/getFsnLifeList?serviceKey=EDAdMbBt6oyqU%2Be1GHKvAlz2aKPTixIEFnbXt4YkpD1MX0xtNbbFYwx81xYdUbR0CzYPDtzT%2FChX0sz4%2BLZjzA%3D%3D&areaNo="+dong_code+"&time="+getTime);
+            URL url = new URL(str_url);
+            InputStream in = url.openStream();
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+            XmlPullParser parser = factory.newPullParser();
+            parser.setInput(in, "utf-8");
+            int parserEvent = parser.getEventType();
+
+            boolean start = false;
+            String tag=null;
+            int cnt=0;
+            do{
+                switch(parserEvent)
+                {
+
+                    case XmlPullParser.START_TAG:
+                        tag = parser.getName();
+                        break;
+                    case XmlPullParser.TEXT:
+                        if(start==true && list.get(cnt)!=null) {
+                            for(int i=0; i<6; i++) {
+                                list.get(i+cnt).setPoison(parser.getText());
+                            }
+                            cnt+=6;
+
+                            Log.d("uv: ", parser.getText());
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        tag = parser.getName();
+                        if(tag.compareTo("date")==0) {
+                            start = true;
+                        }
+                        break;
+                }
+                parserEvent = parser.next(); // 다음 태그로 이동하기
+            }while(parserEvent != XmlPullParser.END_DOCUMENT);
+
+        }catch(Exception e) {
+            //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
     }
 /*
     @Override

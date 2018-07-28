@@ -6,7 +6,7 @@
   android:layout_height="match_parent">
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="56dp"
     android:orientation="horizontal"
     app:layout_constraintBottom_toBottomOf="parent"
     android:background="#a7a0a0">
@@ -14,7 +14,7 @@
 
     <ImageView
       android:id="@+id/bottom_bar_home"
-      android:layout_width="28dp"
+      android:layout_width="120dp"
       android:layout_height="match_parent"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
@@ -22,7 +22,7 @@
 
     <ImageView
       android:id="@+id/bottom_bar_map"
-      android:layout_width="28dp"
+      android:layout_width="120dp"
       android:layout_height="match_parent"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
@@ -30,7 +30,7 @@
 
     <ImageView
       android:id="@+id/bottom_bar_store"
-      android:layout_width="28dp"
+      android:layout_width="120dp"
       android:layout_height="match_parent"
       android:layout_gravity="center_vertical"
       android:layout_weight="1"
