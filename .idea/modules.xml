@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UNITHON-Fry.iml" filepath="$PROJECT_DIR$/UNITHON-Fry.iml" />
-      <module fileurl="file://C:\Users\xowns\UNITHON-Fry\UNITHON-Fry.iml" filepath="C:\Users\xowns\UNITHON-Fry\UNITHON-Fry.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\xowns\UNITHON-Fry\app\app.iml" filepath="C:\Users\xowns\UNITHON-Fry\app\app.iml" />
     </modules>
   </component>
 </project>

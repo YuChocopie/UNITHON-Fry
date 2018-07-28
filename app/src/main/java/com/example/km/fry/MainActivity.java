@@ -5,6 +5,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -112,12 +113,12 @@ public class MainActivity extends AppCompatActivity {
 
                         regionString = HomeActivity.getAddress(MainActivity.this, lat, lng);
                         splitString();
-/*
+
                         Intent intent = new Intent(getApplication(), HomeActivity.class);
 
                         intent.putExtra("MyLat", lat);
                         intent.putExtra("MyLng", lng);
-                        startActivity(intent);*/
+                        startActivity(intent);
                     }
                 });
 
@@ -151,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
                     dongCode = String.valueOf(regionMap.get(region[i]));
                     break;
                 }
+
 
                 urls[i + 1] += String.valueOf(regionMap.get(region[i]));
                 urls[i + 1] += jsonText;
