@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignInActivity" android:theme="@style/TitleThema"/>
 
         <service
             android:name=".MyFirebaseMessagingService">

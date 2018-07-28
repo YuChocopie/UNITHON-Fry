@@ -23,28 +23,21 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true" />
 
-    <ImageView
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/naver"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="56dp" />
+        android:src="@drawable/signup_tap"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="343dp"
+        android:background="@android:color/transparent" />
 
-    <ImageView
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/kakaotalk"
+        android:src="@drawable/signin_tap"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="148dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/facebook"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="240dp" />
+        android:layout_marginBottom="28dp"
+        android:background="@android:color/transparent" />
 
 </RelativeLayout>
