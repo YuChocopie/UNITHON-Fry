@@ -39,7 +39,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         if(LoginActivity.helper.user_check(id, pw)) {
             Toast.makeText(getApplicationContext(), "로그인 완료",  Toast.LENGTH_LONG).show();
-            Intent mainIntent = new Intent(SignInActivity.this, MainActivity.class);
+            Intent mainIntent = new Intent(SignInActivity.this, NavigationActivity.class);
 
             startActivity(mainIntent);
             finish();

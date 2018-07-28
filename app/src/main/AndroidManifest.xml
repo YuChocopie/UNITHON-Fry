@@ -34,7 +34,12 @@
         <activity android:name=".MainActivity" android:theme="@style/AppTheme" />
         <activity android:name=".HomeActivity" android:theme="@style/AppTheme"/>
         <activity android:name=".SignInActivity" android:theme="@style/AppTheme" />
+<<<<<<< HEAD
         <activity android:name=".TemperatureDetailActivity" android:theme="@style/AppTheme" />
+=======
+        <activity android:name=".NavigationActivity" android:theme="@style/AppTheme" />
+
+>>>>>>> 13c4b3792c287d946e5aed8d1a9792fb24e9c8ae
         <service
             android:name=".MyFirebaseMessagingService">
             <intent-filter>
