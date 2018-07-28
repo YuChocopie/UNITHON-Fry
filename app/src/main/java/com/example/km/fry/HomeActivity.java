@@ -2,9 +2,7 @@ package com.example.km.fry;
 
 import android.app.FragmentManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
@@ -14,11 +12,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -124,7 +122,7 @@ public class HomeActivity  extends AppCompatActivity implements OnMapReadyCallba
     }
 
     // 위도, 경도 -> 주소값
-    String getAddress(Context context, double lat, double lon) {
+    static String getAddress(Context context, double lat, double lon) {
 
         Geocoder geocoder;geocoder = new Geocoder(context, Locale.getDefault());
         List<Address> addresses = null;
