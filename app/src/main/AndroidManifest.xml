@@ -17,7 +17,7 @@
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/icon" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,10 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name= ".HomeActivity"
-            android:theme="@style/Theme.AppCompat">
-        </activity>
+        <activity android:name=".SignInActivity" />
 
         <service
             android:name=".MyFirebaseMessagingService">
