@@ -1,95 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_weight="1"
   android:orientation="vertical"
   android:layout_width="match_parent"
-  android:layout_height="60dp"
-  
+  android:layout_height="81dp"
+
   >
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:orientation="horizontal"
+      android:layout_marginTop="16dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="16dp"
+      >
 
-  <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="30dp"
-    android:orientation="horizontal"
-    android:layout_marginTop="10dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp"
-    >
+      <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/uv"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/humidity"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/poision"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/angry"
+        android:layout_weight="1"
+        />
 
-    <ImageView
-      android:layout_width="18dp"
-      android:layout_height="18dp"
-      android:layout_gravity="center_vertical"
-      android:src="@drawable/ic_launcher_background"
-      android:layout_weight="1"
-      />
-    <ImageView
-      android:layout_width="18dp"
-      android:layout_height="18dp"
-      android:layout_gravity="center_vertical"
-      android:src="@drawable/ic_launcher_background"
-      android:layout_weight="1"
-      />
-    <ImageView
-      android:layout_width="18dp"
-      android:layout_height="18dp"
-      android:layout_gravity="center_vertical"
-      android:src="@drawable/ic_launcher_background"
-      android:layout_weight="1"
-      />
-    <ImageView
-      android:layout_width="18dp"
-      android:layout_height="18dp"
-      android:layout_gravity="center_vertical"
-      android:src="@drawable/ic_launcher_background"
-      android:layout_weight="1"
-      />
-
-
-  </LinearLayout>
+    </LinearLayout>
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:orientation="horizontal"
-    android:layout_marginTop="10dp"
-    android:layout_marginStart="30dp"
-    android:layout_marginEnd="30dp"
-    android:layout_weight="1">
-
+    android:layout_marginTop="7dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    >
     <TextView
-      android:id="@+id/tv_humidity"
       android:layout_weight="1"
-      android:gravity="center"
       android:layout_width="30dp"
-      android:layout_height="10dp"
-      android:text="습도"
-      android:textSize="10sp"/>
+      android:layout_height="20dp"
+      android:textSize="13.6sp"
+      android:textColor="#99000000"
+      android:letterSpacing="0.02"
+      android:lineSpacingExtra="6.4sp"
+      android:gravity="center"
+      tools:text="8"
+      />
     <TextView
-      android:id="@+id/tv_uv"
       android:layout_weight="1"
-      android:gravity="center"
       android:layout_width="30dp"
-      android:layout_height="10dp"
-      android:text="자외선"
-      android:textSize="10sp"/>
+      android:layout_height="20dp"
+      android:textSize="13.6sp"
+      android:textColor="#99000000"
+      android:letterSpacing="0.02"
+      android:lineSpacingExtra="6.4sp"
+      android:gravity="center"
+      tools:text="68%"
+      />
     <TextView
-      android:id="@+id/tv_food_poison"
       android:layout_weight="1"
-      android:gravity="center"
       android:layout_width="30dp"
-      android:layout_height="10dp"
-      android:text="식중독"
-      android:textSize="10sp"/>
+      android:layout_height="20dp"
+      android:textSize="13.6sp"
+      android:textColor="#99000000"
+      android:letterSpacing="0.02"
+      android:lineSpacingExtra="6.4sp"
+      android:gravity="center"
+      tools:text="56%"
+      />
     <TextView
-      android:id="@+id/tv_un_happy"
       android:layout_weight="1"
-      android:gravity="center"
       android:layout_width="30dp"
-      android:layout_height="10dp"
-      android:text="불쾌지수"
-      android:textSize="10sp"/>
-
+      android:layout_height="20dp"
+      android:textSize="13.6sp"
+      android:textColor="#99000000"
+      android:letterSpacing="0.02"
+      android:lineSpacingExtra="6.4sp"
+      android:gravity="center"
+      tools:text="100%"
+      />
 
   </LinearLayout>
 </LinearLayout>
