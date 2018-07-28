@@ -14,8 +14,6 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import java.util.Map;
-
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = MyFirebaseMessagingService.class.getSimpleName();
@@ -24,11 +22,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        Map<String, String> data = remoteMessage.getData();
-        String title = data.get("title");
-        String messagae = data.get("content");
+        String title;
+        String message;
 
-        sendNotification(title, messagae);
+        if(remoteMessage.getNotification() == null){
+            title = remoteMessage.getData().get("title");
+            message = remoteMessage.getData().get("message");
+        }
+        else{
+            title = remoteMessage.getNotification().getTitle();
+            message = remoteMessage.getNotification().getBody();
+        }
+
+        sendNotification(title, message);
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
@@ -46,7 +52,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
-                        .setSmallIcon(R.drawable.poision)
+                        .setSmallIcon(R.drawable.icon)
                         .setContentTitle(title)
                         .setContentText(message)
                         .setAutoCancel(true)
