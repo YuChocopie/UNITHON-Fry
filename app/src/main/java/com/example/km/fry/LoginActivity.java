@@ -29,10 +29,9 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         signIn.setOnClickListener(new View.OnClickListener() {
-            /*TODO: 메인->sign In 으로*/
             @Override
             public void onClick(View view) {
-                Intent signinIntent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent signinIntent = new Intent(LoginActivity.this, SignInActivity.class);
                 startActivity(signinIntent);
                 finish();
             }
