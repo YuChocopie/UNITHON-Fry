@@ -10,7 +10,6 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     android:orientation="horizontal"
-    android:weight="1"
     app:layout_constraintBottom_toBottomOf="parent">
 
     <ImageView
