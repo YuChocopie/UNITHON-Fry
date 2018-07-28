@@ -29,6 +29,7 @@
         <activity android:name=".SignUpActivity" android:theme="@style/AppTheme" />
         <activity android:name=".MainActivity" android:theme="@style/AppTheme" />
         <activity android:name=".HomeActivity" android:theme="@style/AppTheme"/>
+        <activity android:name=".SignInActivity" android:theme="@style/AppTheme" />
 
         <service
             android:name=".MyFirebaseMessagingService">

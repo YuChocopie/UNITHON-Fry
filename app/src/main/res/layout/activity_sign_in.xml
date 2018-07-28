@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/sign_up"
+        android:src="@drawable/signin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="148dp" />
 
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/up_id_image"
+            android:id="@+id/in_id_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/id_textbox"
@@ -28,11 +28,11 @@
             android:layout_marginTop="251dp"/>
 
         <EditText
-            android:id="@+id/up_id_et"
+            android:id="@+id/in_id_et"
             android:layout_width="222dp"
             android:layout_height="32dp"
-            android:layout_alignRight="@+id/up_id_image"
-            android:layout_alignTop="@+id/up_id_image"
+            android:layout_alignRight="@+id/id_image"
+            android:layout_alignTop="@+id/id_image"
             android:layout_marginTop="17dp"
             android:layout_marginRight="18dp"
             android:background="@android:color/transparent"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/up_pw_image"
+            android:id="@+id/in_pw_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/pw_textbox"
@@ -53,11 +53,11 @@
             android:layout_marginTop="331dp"/>
 
         <EditText
-            android:id="@+id/up_pw_et"
+            android:id="@+id/in_pw_et"
             android:layout_width="222dp"
             android:layout_height="32dp"
-            android:layout_alignRight="@+id/up_pw_image"
-            android:layout_alignTop="@+id/up_pw_image"
+            android:layout_alignRight="@+id/pw_image"
+            android:layout_alignTop="@+id/pw_image"
             android:layout_marginTop="17dp"
             android:layout_marginRight="18dp"
             android:background="@android:color/transparent"
@@ -67,7 +67,7 @@
 
 
     <ImageButton
-        android:id="@+id/up_config"
+        android:id="@+id/in_config"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/sign_check_icon"
