@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/git.iml" filepath="$PROJECT_DIR$/git.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/UNITHON-Fry.iml" filepath="$PROJECT_DIR$/UNITHON-Fry.iml" />
-      <module fileurl="file://C:\Users\xowns\UNITHON-Fry\UNITHON-Fry.iml" filepath="C:\Users\xowns\UNITHON-Fry\UNITHON-Fry.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\xowns\UNITHON-Fry\app\app.iml" filepath="C:\Users\xowns\UNITHON-Fry\app\app.iml" />
->>>>>>> b32037bb53f8c811c4cf665177cca2e007ced2e2
     </modules>
   </component>
 </project>

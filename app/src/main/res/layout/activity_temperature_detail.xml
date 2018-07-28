@@ -4,13 +4,13 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".Location.TemperatureDetail">
+  tools:context=".itemAdapter$TemperatureDetail">
 
-  <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-      <include layout="@layout/item_temperature_details" />
-  </LinearLayout>
 
+    <ListView
+        android:id="@+id/listViewTemp"
+        android:layout_width="368dp"
+        android:layout_height="551dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
 </android.support.constraint.ConstraintLayout>

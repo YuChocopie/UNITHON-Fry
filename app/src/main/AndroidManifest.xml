@@ -34,7 +34,7 @@
         <activity android:name=".MainActivity" android:theme="@style/AppTheme" />
         <activity android:name=".HomeActivity" android:theme="@style/AppTheme"/>
         <activity android:name=".SignInActivity" android:theme="@style/AppTheme" />
-
+        <activity android:name=".TemperatureDetailActivity" android:theme="@style/AppTheme" />
         <service
             android:name=".MyFirebaseMessagingService">
             <intent-filter>
@@ -42,7 +42,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".Location.TemperatureDetail"></activity>
+        <activity android:name=".itemAdapter$TemperatureDetail"></activity>
     </application>
 
 </manifest>
