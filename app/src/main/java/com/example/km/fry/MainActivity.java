@@ -1,7 +1,10 @@
 package com.example.km.fry;
 
 import android.content.Context;
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,6 +46,33 @@ public class MainActivity extends AppCompatActivity {
             region[i]="";
         }
 
+        // 권한이 허용되어있지 않은 경우 permission 요청
+        if (ActivityCompat.checkSelfPermission(
+                this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // 위치 정보 접근 요청
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 0);
+        }
+        else {
+            main();
+        }
+    }
+
+    public void splitString()
+    {
+        region = new String[4];
+
+        region = regionString.split("\\s");
+
+        for (int i = 0; i < region.length; ++i)
+        {
+            Log.d("length: ", region[i]);
+        }
+    }
+
+    public void main()
+    {
         location.requestSingleUpdate(this.getApplicationContext(),
                 new location.LocationCallback() {
                     @Override
@@ -50,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
 
                         float lat = location.latitude;
                         float lng = location.longitude;
+
+                        Log.d("lat: ", lat + "");
+                        Log.d("lng: ", lng + "");
+
+                        // default
+                        if (lat == 0.0f && lng == 0.0f)
+                        {
+                            lat = 37.54664f;
+                            lng = 126.94988f;
+                        }
 
                         regionString = HomeActivity.getAddress(MainActivity.this, lat, lng);
                         splitString();
@@ -139,15 +179,16 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    public void splitString()
-    {
-
-
-        region = regionString.split("\\s");
-
-        for (int i = 0; i < region.length; ++i)
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        if (requestCode == 0)
         {
-            Log.d("length: ", region[i]);
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                main();
+            }
+            else{
+                Log.d("check: ", "check permission");
+            }
         }
     }
 }
