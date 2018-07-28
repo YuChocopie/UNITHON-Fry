@@ -24,6 +24,7 @@
         android:layout_alignParentBottom="true" />
 
     <ImageButton
+        android:id="@+id/login_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/signup_tap"
@@ -32,6 +33,7 @@
         android:background="@android:color/transparent" />
 
     <ImageButton
+        android:id="@+id/login_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/signin_tap"
