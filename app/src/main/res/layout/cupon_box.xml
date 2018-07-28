@@ -2,23 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="240dp"
-  android:layout_height="360dp"
+  android:layout_height="380dp"
   xmlns:tools="http://schemas.android.com/tools"
   android:backgroundTint="#ffffff"
-  android:background="@drawable/layout_circle"
+  android:background="@drawable/layout_circle2"
+
   android:orientation="vertical"
   android:id="@+id/item_card_box_success">
 
   <ImageView
-    android:layout_centerHorizontal="true"
     android:layout_margin="20dp"
-    android:layout_width="226dp"
-    android:layout_height="162dp"
-    android:src="#500000"/>
+    android:layout_centerHorizontal="true"
+    android:layout_width="200dp"
+    android:layout_height="145dp"
+    android:src="#a5a4a4"/>
   <TextView
     android:layout_gravity="center_horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="4dp"
     android:textSize="16sp"
     android:textColor="#60c8ff"
     android:letterSpacing="0.01"
@@ -49,13 +51,15 @@
     android:gravity="center_horizontal"
     tools:text="2018. 07. 29 18:00 ~ 18:30"
     />
-  <ImageButton
+  <ImageView
     android:layout_gravity="center_horizontal"
     android:layout_marginTop="27dp"
-    android:layout_marginBottom="16dp"
+    android:layout_marginBottom="20dp"
     android:scaleType="center"
-    android:layout_width="30dp"
-    android:layout_height="30dp"
+    android:layout_width="200dp"
+    android:layout_height="62dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:backgroundTint="#ffffff"
-    android:src="@drawable/check_icon"/>
+    android:src="@drawable/airplane"/>
 </LinearLayout>
