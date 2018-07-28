@@ -2,30 +2,40 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="match_parent"
+ >
 
   <FrameLayout
     android:background="#2b2b4d"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
     <LinearLayout
       android:gravity="center"
       android:orientation="horizontal"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      >
       <ImageView
         android:src="@drawable/cloud"
-        android:padding="10dp"
+        android:paddingTop="25dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+      <ImageView
+        android:src="@drawable/cloud"
+        android:paddingTop="25dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
       <ImageView
         android:src="@drawable/cloud"
-        android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-      <ImageView
-        android:src="@drawable/cloud"
-        android:padding="10dp"
+        android:paddingTop="25dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     </LinearLayout>

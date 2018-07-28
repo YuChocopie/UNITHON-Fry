@@ -6,11 +6,11 @@
   android:layout_marginTop="@dimen/text_size_67">
 
   <LinearLayout
+    android:elevation="8dp"
     android:layout_gravity="center"
     android:layout_width="240dp"
     android:layout_height="380dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:backgroundTint="#ffffff"
     android:background="@drawable/layout_circle2"
     android:orientation="vertical"
     android:id="@+id/item_card_box_success">
@@ -20,14 +20,14 @@
       android:layout_centerHorizontal="true"
       android:layout_width="200dp"
       android:layout_height="145dp"
-      android:src="#a5a4a4"/>
+      android:src="@drawable/nail"/>
     <TextView
       android:layout_gravity="center_horizontal"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="4dp"
       android:textSize="16sp"
-      android:textColor="#da9917"
+      android:textColor="#60c8ff"
       android:letterSpacing="0.01"
       android:lineSpacingExtra="8sp"
       android:textStyle="bold"
@@ -62,10 +62,10 @@
       android:layout_marginBottom="20dp"
       android:scaleType="center"
       android:layout_width="200dp"
-      android:layout_height="62dp"
+      android:layout_height="42dp"
       android:layout_marginLeft="20dp"
       android:layout_marginRight="20dp"
       android:backgroundTint="#ffffff"
-      android:src="@drawable/airplane"/>
+      android:src="@drawable/bacode"/>
   </LinearLayout>
 </LinearLayout>
