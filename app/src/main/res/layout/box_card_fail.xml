@@ -4,23 +4,25 @@
   android:layout_width="240dp"
   android:layout_height="360dp"
   xmlns:tools="http://schemas.android.com/tools"
-  android:background="#efdddd"
   android:orientation="vertical"
+  android:backgroundTint="#ffffff"
+  android:background="@drawable/layout_circle"
   android:id="@+id/ltem_box_card_fail">
 
   <ImageView
     android:layout_centerHorizontal="true"
     android:layout_margin="20dp"
-    android:layout_width="200dp"
-    android:layout_height="145dp"
-    android:src="@drawable/ic_launcher_background"/>
+    android:layout_width="226dp"
+    android:layout_height="162dp"
+    android:src="@drawable/airplane"/>
   <TextView
     android:layout_gravity="center_horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textSize="16sp"
+    android:textSize="19.5sp"
     android:textColor="#60c8ff"
     android:letterSpacing="0.01"
+    android:textStyle="bold"
     android:lineSpacingExtra="8sp"
     android:gravity="center_horizontal"
     tools:text="조금만 버티세요!"
@@ -31,8 +33,8 @@
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:layout_marginTop="24dp"
-    android:textSize="12sp"
-    android:textColor="#99000000"
+    android:textSize="16sp"
+    android:textColor="#60c8ff"
     tools:text="구조대원은
 다시 돌아옵니다!"
     />
@@ -40,9 +42,11 @@
 
   <ImageButton
     android:layout_gravity="center_horizontal"
-    android:layout_marginTop="35dp"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="16dp"
     android:scaleType="center"
     android:layout_width="30dp"
     android:layout_height="30dp"
-    android:src="@drawable/ic_launcher_background"/>
+    android:backgroundTint="#ffffff"
+    android:src="@drawable/check_icon"/>
 </LinearLayout>

@@ -4,22 +4,25 @@
   android:layout_width="240dp"
   android:layout_height="360dp"
   xmlns:tools="http://schemas.android.com/tools"
-  android:background="#000000"
+  android:background="@drawable/layout_circle"
   android:orientation="vertical"
-  android:id="@+id/item_card_box">
+  android:id="@+id/item_card_box"
+  android:backgroundTint="#ffffff"
+  >
 
   <ImageView
     android:layout_marginLeft="45dp"
     android:layout_marginTop="45dp"
     android:layout_width="140dp"
     android:layout_height="220dp"
-    android:src="@drawable/ic_launcher_background"/>
+    android:src="@drawable/box"/>
 
   <TextView
     android:layout_gravity="center_horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="23.4sp"
+    android:textStyle="bold"
     android:textColor="#60c8ff"
     android:lineSpacingExtra="14.6sp"
     android:gravity="center_horizontal"

@@ -4,16 +4,17 @@
   android:layout_width="240dp"
   android:layout_height="360dp"
   xmlns:tools="http://schemas.android.com/tools"
-  android:background="#efdddd"
+  android:backgroundTint="#ffffff"
+  android:background="@drawable/layout_circle"
   android:orientation="vertical"
   android:id="@+id/item_card_box_success">
 
   <ImageView
     android:layout_centerHorizontal="true"
     android:layout_margin="20dp"
-    android:layout_width="200dp"
-    android:layout_height="145dp"
-    android:src="@drawable/ic_launcher_background"/>
+    android:layout_width="226dp"
+    android:layout_height="162dp"
+    android:src="#500000"/>
   <TextView
     android:layout_gravity="center_horizontal"
     android:layout_width="wrap_content"
@@ -22,6 +23,7 @@
     android:textColor="#60c8ff"
     android:letterSpacing="0.01"
     android:lineSpacingExtra="8sp"
+    android:textStyle="bold"
     android:gravity="center_horizontal"
     tools:text="포카리스웨트 400원 할인권"
     />
@@ -29,8 +31,8 @@
     android:layout_gravity="center_horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:textSize="12sp"
+    android:layout_marginTop="27dp"
+    android:textSize="11.7sp"
     android:textColor="#99000000"
     tools:text="하나로마트"
     />
@@ -40,7 +42,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
-    android:textSize="12sp"
+    android:textSize="11.7sp"
     android:textColor="#99000000"
     android:letterSpacing="0.03"
     android:lineSpacingExtra="4.3sp"
@@ -49,9 +51,11 @@
     />
   <ImageButton
     android:layout_gravity="center_horizontal"
-    android:layout_marginTop="35dp"
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="16dp"
     android:scaleType="center"
     android:layout_width="30dp"
     android:layout_height="30dp"
-    android:src="@drawable/ic_launcher_background"/>
+    android:backgroundTint="#ffffff"
+    android:src="@drawable/check_icon"/>
 </LinearLayout>
