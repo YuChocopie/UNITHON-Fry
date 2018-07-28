@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
                 urls[i + 1] += String.valueOf(regionMap.get(region[i]));
                 urls[i + 1] += jsonText;
+
             }
 
         } catch (MalformedURLException e) {

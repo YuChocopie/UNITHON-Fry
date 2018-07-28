@@ -10,11 +10,14 @@ public class LoginActivity extends AppCompatActivity {
 
     ImageButton signUp;
     ImageButton signIn;
+    public static MySQLiteOpenHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        helper = new MySQLiteOpenHelper(getApplicationContext(), "fry6.db", null, 1);
 
         signUp = findViewById(R.id.login_up);
         signIn = findViewById(R.id.login_in);
