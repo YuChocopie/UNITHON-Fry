@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:background="#a4a1a1">
+
+    <TextView
+      android:layout_gravity="center_vertical"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="12sp"
+      android:textColor="#99000000"
+      tools:text="오후 12"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="7dp"/>
+
+      <View
+        android:layout_width="1dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/colorPrimaryDark"/>
+      <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="#ffa11e"
+        android:textSize="46sp"
+        tools:text="36˚" />
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="center_vertical"
+    >
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:orientation="horizontal"
+      android:layout_marginTop="10dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      >
+
+      <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_weight="1"
+        />
+
+
+    </LinearLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:orientation="horizontal"
+      android:layout_marginTop="10dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginEnd="30dp"
+      android:layout_weight="1">
+
+      <TextView
+        android:id="@+id/tv_humidity"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="10dp"
+        android:text="습도"
+        android:textSize="10sp"/>
+      <TextView
+        android:id="@+id/tv_uv"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="10dp"
+        android:text="자외선"
+        android:textSize="10sp"/>
+      <TextView
+        android:id="@+id/tv_food_poisoning"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="10dp"
+        android:text="식중독"
+        android:textSize="10sp"/>
+      <TextView
+        android:id="@+id/tv_un_happy"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="10dp"
+        android:text="불쾌지수"
+        android:textSize="10sp"/>
+
+
+    </LinearLayout>
+  </LinearLayout>
+
+  </LinearLayout>

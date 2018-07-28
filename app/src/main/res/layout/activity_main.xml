@@ -17,15 +17,27 @@
             layout="@layout/item_home_weather_bar"/>
         <include
             layout="@layout/item_egg"/>
-        <include
-            layout="@layout/item_address_dong"/>
+
 
     </LinearLayout>
 
-    <include
-      layout="@layout/item_global_bottom_bar"
-      tools:ignore="MissingConstraints"
-      tools:layout_editor_absoluteX="0dp"
-      tools:layout_editor_absoluteY="366dp" />
+    <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="130dp"
+      android:layout_gravity="bottom"
+      android:layout_marginBottom="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      tools:layout_editor_absoluteX="16dp"
+      tools:ignore="MissingConstraints">
+
+        <include layout="@layout/item_address_dong" />
+
+        <include
+          layout="@layout/item_global_bottom_bar"
+          tools:ignore="MissingConstraints"
+          tools:layout_editor_absoluteX="0dp"
+          tools:layout_editor_absoluteY="366dp" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

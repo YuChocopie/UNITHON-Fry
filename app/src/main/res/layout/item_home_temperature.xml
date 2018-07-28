@@ -18,5 +18,5 @@
     android:textSize="46sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    tools:text="36c" />
+    tools:text="36˚" />
 </android.support.constraint.ConstraintLayout>
