@@ -9,11 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.km.fry.Location.location;
 
@@ -40,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     String regionString;    // 처음 지역명 가져온 것
     String[] region;        // 지역 묶음 0: 대한민국, 1: 시 ...
     String dongCode;
+    RegionAsyncTask regionTask;
+    HashMap<String, Integer> regionMap;
 
     float lat;
     float lng;
@@ -121,8 +121,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        HashMap<String, Integer> regionMap;
-
         String[] urls = new String[4];
         String jsonText = ".json.txt";
 
@@ -138,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 URL url = new URL(urls[i]);
 
-                RegionAsyncTask regionTask = new RegionAsyncTask();
+                regionTask = new RegionAsyncTask();
 
                 regionTask.execute(url);
 
@@ -236,12 +234,19 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("MyLng", lng);
                     startActivity(intent);
                     */
+                    Intent intent = new Intent(getApplicationContext(), TemperatureDetailActivity.class);
+                    //regionMap.get(region[i])
+                    intent.putExtra("regionCode", regionMap.get(region[3]) );
+                    intent.putExtra("region", region[3]);
+                    startActivity(intent);
+
 
                     break;
 
                 case R.id.button:
 
-                    Intent intent = new Intent(getApplication(), HomeActivity.class);
+                   // Intent intent = new Intent(getApplication(), HomeActivity.class);
+                    intent = new Intent(getApplication(), HomeActivity.class);
                     intent.putExtra("MyLat", lat);
                     intent.putExtra("MyLng", lng);
                     startActivity(intent);

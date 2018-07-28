@@ -64,6 +64,7 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
             boolean check_poison = false;
 
             boolean start = false;
+            int cnt2=0;
 
             do{
                 switch(parserEvent)
@@ -78,6 +79,7 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
 
                         else if(tag.compareTo("temp")==0) {
                             check_degree = true;
+                            cnt2++;
                         }
                         else if(tag.compareTo("reh")==0) {
                             check_humidity = true;
@@ -90,7 +92,7 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
                     case XmlPullParser.TEXT:
                         tag = parser.getName();
 
-                        if(start) {
+                        if(start && cnt2<15) {
                             if(check_degree) {
                                 str_degree = parser.getText();
                             }
@@ -106,37 +108,36 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
                         break;
                     case XmlPullParser.END_TAG:
                         tag = parser.getName();
-                        if(tag.compareTo("data") == 0 && start) {
+                        if(cnt2<15) {
+                            if (tag.compareTo("data") == 0 && start) {
 
-                            String str_trans_hour="";
-                            int hour = Integer.parseInt(str_hour);
+                                String str_trans_hour = "";
+                                int hour = Integer.parseInt(str_hour);
 
 
-                            //24:오전12시(새벽)
-                            if(hour==24 || hour < 12) {
-                                str_trans_hour="오전 ";
-                            } else {
-                                str_trans_hour="오후 ";
+                                //24:오전12시(새벽)
+                                if (hour == 24 || hour < 12) {
+                                    str_trans_hour = "오전 ";
+                                } else {
+                                    str_trans_hour = "오후 ";
+                                }
+
+                                if (hour > 12) {
+                                    hour = hour - 12;
+                                }
+
+                                str_trans_hour = str_trans_hour + String.valueOf(hour);
+
+                                list.add(new ItemInfo(str_degree.substring(0, 2) + "˚", str_humidity + "%", str_trans_hour, "", "", ""));
+
+                                start = false;
+                            } else if (tag.compareTo("temp") == 0 && start) {
+                                check_degree = false;
+                            } else if (tag.compareTo("reh") == 0 && start) {
+                                check_humidity = false;
+                            } else if (tag.compareTo("hour") == 0 && start) {
+                                check_hour = false;
                             }
-
-                            if(hour>12) {
-                                hour=hour-12;
-                            }
-
-                            str_trans_hour = str_trans_hour+String.valueOf(hour);
-
-                            list.add(new ItemInfo(str_degree+"˚", str_humidity+"%", str_trans_hour,"","",""));
-
-                            start = false;
-                        }
-                        else if(tag.compareTo("temp") == 0 && start) {
-                            check_degree = false;
-                        }
-                        else if(tag.compareTo("reh") == 0 && start) {
-                            check_humidity = false;
-                        }
-                        else if(tag.compareTo("hour") == 0 && start) {
-                            check_hour  = false;
                         }
                         break;
                 }
@@ -190,7 +191,7 @@ public class DataAsyncTask extends AsyncTask<String,Void,ArrayList<ItemInfo>> {
                         tag = parser.getName();
                         break;
                     case XmlPullParser.TEXT:
-                        if(start==true && cnt < 17 && list.get(cnt)!=null) {
+                        if(start==true && cnt < 15 && list.get(cnt)!=null) {
                             list.get(cnt).setUnhappy(parser.getText());
                             Log.d("unhappy: ", parser.getText());
                             cnt++;
