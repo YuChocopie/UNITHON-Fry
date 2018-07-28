@@ -1,6 +1,9 @@
 package com.example.km.fry;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 권한이 허용되어있지 않은 경우 permission 요청
+        if (ActivityCompat.checkSelfPermission(
+                this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // 위치 정보 접근 요청
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 0);
+        }
+
         location.requestSingleUpdate(this.getApplicationContext(),
                 new location.LocationCallback() {
                     @Override
@@ -29,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
                         float lat = location.latitude;
                         float lng = location.longitude;
+
+                        Log.d("lat: ", lat + "");
+                        Log.d("lng: ", lng + "");
+
+                        // default
+                        if (lat == 0.0f && lng == 0.0f)
+                        {
+                            lat = 37.54664f;
+                            lng = 126.94988f;
+                        }
 
                         regionString = HomeActivity.getAddress(MainActivity.this, lat, lng);
                         splitString();
