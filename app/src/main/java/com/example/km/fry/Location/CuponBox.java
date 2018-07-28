@@ -51,10 +51,10 @@ public class CuponBox extends AppCompatActivity implements ViewFlipperAction.Vie
     for(int i=0; i<indexes.size(); i++){
       ImageView index = indexes.get(i);
       if(i == position){
-        index.setImageResource(R.drawable.angry);
+        index.setImageResource(R.drawable.uv);
       }
       else{
-        index.setImageResource(R.drawable.uv);
+        index.setImageResource(R.drawable.cloud);
       }
     }
   }

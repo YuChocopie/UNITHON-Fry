@@ -11,20 +11,20 @@
     android:layout_height="wrap_content">
     <ImageView
       android:id="@+id/imgIndex0"
-      android:src="@drawable/uv"
+      android:src="@drawable/cloud"
       android:padding="10dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       />
     <ImageView
       android:id="@+id/imgIndex1"
-      android:src="@drawable/uv"
+      android:src="@drawable/cloud"
       android:padding="10dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content" />
     <ImageView
       android:id="@+id/imgIndex2"
-      android:src="@drawable/uv"
+      android:src="@drawable/cloud"
       android:padding="10dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content" />
