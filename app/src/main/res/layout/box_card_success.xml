@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="240dp"
+  android:layout_height="360dp"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:background="#000000"
+  android:orientation="vertical">
+
+  <ImageView
+    android:layout_marginLeft="45dp"
+    android:layout_marginTop="45dp"
+    android:layout_width="140dp"
+    android:layout_height="220dp"
+    android:src="@drawable/ic_launcher_background"/>
+
+  <TextView
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="23.4sp"
+    android:textColor="#60c8ff"
+    android:lineSpacingExtra="14.6sp"
+    android:gravity="center_horizontal"
+    tools:text="구호물품이
+도착했습니다!"
+    />
+</LinearLayout>
