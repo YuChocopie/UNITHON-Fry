@@ -1,26 +1,47 @@
 package com.example.km.fry;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.km.fry.Location.location;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Context context = this;
+    private Button btn;
+    ArrayList<ItemInfo> list = new ArrayList<ItemInfo>();
+    itemAdapter adapter;
+    ListView listView;
     String regionString;    // 처음 지역명 가져온 것
     String[] region;        // 지역 묶음 0: 대한민국, 1: 시 ...
+    String dongCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btn = (Button) findViewById(R.id.button);
+        listView = (ListView) findViewById(R.id.listView);
+        btn.setOnClickListener(listener);
+
+        region = new String[4];
+        for(int i=0; i<4; i++) {
+            region[i]="";
+        }
 
         location.requestSingleUpdate(this.getApplicationContext(),
                 new location.LocationCallback() {
@@ -68,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     // 동코드: region[3]
                     Log.d("region code: ", regionMap.get(region[i]) + "");
+                    dongCode = String.valueOf(regionMap.get(region[i]));
                     break;
                 }
 
@@ -84,9 +106,42 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch(v.getId()) {
+                case R.id.button:
+                    try {
+                        Log.d("click", "click");
+                        DataAsyncTask asyncTask = new DataAsyncTask();
+                        asyncTask.execute(dongCode);
+                        list = asyncTask.get();
+
+                        adapter = new itemAdapter(context, list);
+                        adapter.notifyDataSetChanged();
+                        listView.setAdapter(adapter);
+                        //listView.setChoiceMode(ListView.CHOICE_MODE_NONE);
+
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+
+
+
+                    break;
+
+            }
+
+        }
+
+    };
+
     public void splitString()
     {
-        region = new String[4];
+
 
         region = regionString.split("\\s");
 
