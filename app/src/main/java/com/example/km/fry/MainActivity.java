@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewHumidity;
     private TextView textViewPoison;
     private TextView textViewDegree;
+    private TextView textViewPlus;
+    private TextView textViewAddress;
 
     private Context context = this;
     private Button btn;
@@ -51,10 +53,12 @@ public class MainActivity extends AppCompatActivity {
         textViewHumidity = (TextView) findViewById(R.id.tv_humidity);
         textViewPoison = (TextView) findViewById(R.id.tv_poison);
         textViewDegree = (TextView) findViewById(R.id.tv_temperature);
-
+        textViewPlus = (TextView) findViewById(R.id.plus);
+        textViewAddress = (TextView) findViewById(R.id.tv_address_dong);
         btn = (Button) findViewById(R.id.button);
         listView = (ListView) findViewById(R.id.listView);
         btn.setOnClickListener(listener);
+        textViewPlus.setOnClickListener(listener);
 
         region = new String[4];
         for(int i=0; i<4; i++) {
@@ -159,6 +163,32 @@ public class MainActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
+        try {
+            Log.d("click", "click");
+            DataAsyncTask asyncTask = new DataAsyncTask();
+            asyncTask.execute(dongCode);
+            list = asyncTask.get();
+
+            textViewUv.setText(list.get(0).getUv());
+            textViewUnhappy.setText(list.get(0).getUnhappy());
+            textViewPoison.setText(list.get(0).getPoison());
+            textViewHumidity.setText(list.get(0).getHumidity());
+            textViewAddress.setText(region[3]);
+
+            String tmp = list.get(0).getDegree();
+            /*
+
+            textViewDegree.setText(tmp.substring(0,2));
+            adapter = new itemAdapter(context, list);
+            adapter.notifyDataSetChanged();
+            listView.setAdapter(adapter);*/
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /*
@@ -198,37 +228,22 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch(v.getId()) {
-                case R.id.button:
+                case R.id.plus:
                     /*
                     Intent intent = new Intent(getApplication(), HomeActivity.class);
                     intent.putExtra("MyLat", lat);
                     intent.putExtra("MyLng", lng);
                     startActivity(intent);
                     */
-                    try {
-                        Log.d("click", "click");
-                        DataAsyncTask asyncTask = new DataAsyncTask();
-                        asyncTask.execute(dongCode);
-                        list = asyncTask.get();
 
-                        textViewUv.setText(list.get(0).getUv());
-                        textViewUnhappy.setText(list.get(0).getUnhappy());
-                        textViewPoison.setText(list.get(0).getPoison());
-                        textViewHumidity.setText(list.get(0).getHumidity());
-                        textViewDegree.setText(list.get(0).getDegree());
+                    break;
 
+                case R.id.button:
 
-
-
-                        adapter = new itemAdapter(context, list);
-                        adapter.notifyDataSetChanged();
-                        listView.setAdapter(adapter);
-
-                    } catch (ExecutionException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    Intent intent = new Intent(getApplication(), HomeActivity.class);
+                    intent.putExtra("MyLat", lat);
+                    intent.putExtra("MyLng", lng);
+                    startActivity(intent);
                     break;
 
             }

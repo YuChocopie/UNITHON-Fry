@@ -15,6 +15,6 @@
     android:textSize="23.4sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    tools:text="마포구" />
+      android:text="마포구" />
 
 </android.support.constraint.ConstraintLayout>
