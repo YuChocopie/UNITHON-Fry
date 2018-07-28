@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.km.fry.Location.location;
@@ -23,6 +24,12 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView textViewUv;
+    private TextView textViewUnhappy;
+    private TextView textViewHumidity;
+    private TextView textViewPoison;
+    private TextView textViewDegree;
+
     private Context context = this;
     private Button btn;
     ArrayList<ItemInfo> list = new ArrayList<ItemInfo>();
@@ -32,10 +39,18 @@ public class MainActivity extends AppCompatActivity {
     String[] region;        // 지역 묶음 0: 대한민국, 1: 시 ...
     String dongCode;
 
+    float lat;
+    float lng;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textViewUv = (TextView) findViewById(R.id.tv_uv);
+        textViewUnhappy = (TextView) findViewById(R.id.tv_unhappy);
+        textViewHumidity = (TextView) findViewById(R.id.tv_humidity);
+        textViewPoison = (TextView) findViewById(R.id.tv_poison);
+        textViewDegree = (TextView) findViewById(R.id.tv_temperature);
 
         btn = (Button) findViewById(R.id.button);
         listView = (ListView) findViewById(R.id.listView);
@@ -78,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onNewLocationAvailable(location.GPSCoordinates location) {
 
-                        float lat = location.latitude;
-                        float lng = location.longitude;
+                        lat = location.latitude;
+                        lng = location.longitude;
 
                         Log.d("lat: ", lat + "");
                         Log.d("lng: ", lng + "");
@@ -93,12 +108,12 @@ public class MainActivity extends AppCompatActivity {
 
                         regionString = HomeActivity.getAddress(MainActivity.this, lat, lng);
                         splitString();
-
+/*
                         Intent intent = new Intent(getApplication(), HomeActivity.class);
 
                         intent.putExtra("MyLat", lat);
                         intent.putExtra("MyLng", lng);
-                        startActivity(intent);
+                        startActivity(intent);*/
                     }
                 });
 
@@ -147,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /*
     private View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -178,8 +194,49 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-    };
+    };*/
+    private View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch(v.getId()) {
+                case R.id.button:
+                    /*
+                    Intent intent = new Intent(getApplication(), HomeActivity.class);
+                    intent.putExtra("MyLat", lat);
+                    intent.putExtra("MyLng", lng);
+                    startActivity(intent);
+                    */
+                    try {
+                        Log.d("click", "click");
+                        DataAsyncTask asyncTask = new DataAsyncTask();
+                        asyncTask.execute(dongCode);
+                        list = asyncTask.get();
 
+                        textViewUv.setText(list.get(0).getUv());
+                        textViewUnhappy.setText(list.get(0).getUnhappy());
+                        textViewPoison.setText(list.get(0).getPoison());
+                        textViewHumidity.setText(list.get(0).getHumidity());
+                        textViewDegree.setText(list.get(0).getDegree());
+
+
+
+
+                        adapter = new itemAdapter(context, list);
+                        adapter.notifyDataSetChanged();
+                        listView.setAdapter(adapter);
+
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+            }
+
+        }
+
+    };
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         if (requestCode == 0)

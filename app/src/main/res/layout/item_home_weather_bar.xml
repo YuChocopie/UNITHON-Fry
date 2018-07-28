@@ -55,6 +55,7 @@
     android:layout_marginRight="16dp"
     >
     <TextView
+        android:id="@+id/tv_uv"
       android:layout_weight="1"
       android:layout_width="30dp"
       android:layout_height="20dp"
@@ -65,39 +66,42 @@
       android:gravity="center"
       tools:text="8"
       />
+
     <TextView
-      android:layout_weight="1"
-      android:layout_width="30dp"
-      android:layout_height="20dp"
-      android:textSize="13.6sp"
-      android:textColor="#99000000"
-      android:letterSpacing="0.02"
-      android:lineSpacingExtra="6.4sp"
-      android:gravity="center"
-      tools:text="68%"
-      />
+        android:id="@+id/tv_humidity"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="6.4sp"
+        android:textColor="#99000000"
+        android:textSize="13.6sp"
+        tools:text="68%" />
+
     <TextView
-      android:layout_weight="1"
-      android:layout_width="30dp"
-      android:layout_height="20dp"
-      android:textSize="13.6sp"
-      android:textColor="#99000000"
-      android:letterSpacing="0.02"
-      android:lineSpacingExtra="6.4sp"
-      android:gravity="center"
-      tools:text="56%"
-      />
+        android:id="@+id/tv_poison"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="6.4sp"
+        android:textColor="#99000000"
+        android:textSize="13.6sp"
+        tools:text="56%" />
+
     <TextView
-      android:layout_weight="1"
-      android:layout_width="30dp"
-      android:layout_height="20dp"
-      android:textSize="13.6sp"
-      android:textColor="#99000000"
-      android:letterSpacing="0.02"
-      android:lineSpacingExtra="6.4sp"
-      android:gravity="center"
-      tools:text="100%"
-      />
+        android:id="@+id/tv_unhappy"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="6.4sp"
+        android:textColor="#99000000"
+        android:textSize="13.6sp"
+        tools:text="100%" />
 
   </LinearLayout>
 </LinearLayout>
