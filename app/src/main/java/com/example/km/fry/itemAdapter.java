@@ -40,14 +40,18 @@ public class itemAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         if(view == null) {
-            //  LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.list_item, viewGroup, false);
+
+            //view = inflater.inflate(R.layout.list_item, viewGroup, false);
+           view = inflater.inflate(R.layout.item_temperature_details, viewGroup, false);
         }
 
 
-        TextView textView = (TextView) view.findViewById(R.id.textView);
-        TextView textView2 = (TextView) view.findViewById(R.id.textView2);
-        TextView textView3 = (TextView) view.findViewById(R.id.textView3);
+        TextView tv_degree = (TextView) view.findViewById(R.id.tv_degree);
+        TextView tv_humidity = (TextView) view.findViewById(R.id.tv_humidity);
+        TextView tv_hour = (TextView) view.findViewById(R.id.tv_hour);
+        TextView tv_unhappy = (TextView) view.findViewById(R.id.tv_unhappy);
+        TextView tv_uv = (TextView) view.findViewById(R.id.tv_uv);
+        TextView tv_poison = (TextView) view.findViewById(R.id.tv_poison);
 
         // Data Set에서 position에 위치한 데이터 참조 획득
         ItemInfo itemInfo = arrayList.get(i);
@@ -55,9 +59,12 @@ public class itemAdapter extends BaseAdapter {
         //아이템 내 각 위젝에 데이터 반영
         //icon.setImageDrawable(animal.getIcon());
 
-        textView.setText(itemInfo.getDegree());
-        textView2.setText(itemInfo.getHumidity());
-        textView3.setText(itemInfo.getHour());
+        tv_degree.setText(itemInfo.getDegree());
+        tv_humidity.setText(itemInfo.getHumidity());
+        tv_hour.setText(itemInfo.getHour());
+        tv_unhappy.setText(itemInfo.getUnhappy());
+        tv_uv.setText(itemInfo.getUv());
+        tv_poison.setText(itemInfo.getPoison());
 
         return view;
     }

@@ -7,6 +7,7 @@
     android:background="#a4a1a1">
 
     <TextView
+        android:id="@+id/tv_hour"
       android:layout_gravity="center_vertical"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -22,7 +23,7 @@
         android:layout_gravity="center_vertical"
         android:background="@color/colorPrimaryDark"/>
       <TextView
-        android:id="@+id/tv_temperature"
+        android:id="@+id/tv_degree"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
@@ -104,7 +105,7 @@
         android:text="자외선"
         android:textSize="10sp"/>
       <TextView
-        android:id="@+id/tv_food_poisoning"
+        android:id="@+id/tv_poison"
         android:layout_weight="1"
         android:gravity="center"
         android:layout_width="30dp"
@@ -112,7 +113,7 @@
         android:text="식중독"
         android:textSize="10sp"/>
       <TextView
-        android:id="@+id/tv_un_happy"
+        android:id="@+id/tv_unhappy"
         android:layout_weight="1"
         android:gravity="center"
         android:layout_width="30dp"
