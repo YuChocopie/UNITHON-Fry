@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.km.fry.Location.CuponBox;
 import com.example.km.fry.Location.location;
 
 import java.net.MalformedURLException;
@@ -31,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewAddress;
 
     private Context context = this;
-    private Button btn;
+    private ImageButton btn;
+    ImageButton couponBtn;
     ArrayList<ItemInfo> list = new ArrayList<ItemInfo>();
     itemAdapter adapter;
     ListView listView;
@@ -53,11 +56,13 @@ public class MainActivity extends AppCompatActivity {
         textViewHumidity = (TextView) findViewById(R.id.tv_humidity);
         textViewPoison = (TextView) findViewById(R.id.tv_poison);
         textViewDegree = (TextView) findViewById(R.id.tv_temperature);
+        couponBtn = (ImageButton)findViewById(R.id.coupon);
         textViewPlus = (TextView) findViewById(R.id.plus);
         textViewAddress = (TextView) findViewById(R.id.tv_address_dong);
-        btn = (Button) findViewById(R.id.button);
+        btn = (ImageButton) findViewById(R.id.button);
         listView = (ListView) findViewById(R.id.listView);
         btn.setOnClickListener(listener);
+        couponBtn.setOnClickListener(listener);
         textViewPlus.setOnClickListener(listener);
 
         region = new String[4];
@@ -249,6 +254,11 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(getApplication(), HomeActivity.class);
                     intent.putExtra("MyLat", lat);
                     intent.putExtra("MyLng", lng);
+                    startActivity(intent);
+                    break;
+
+                case R.id.coupon:
+                    intent = new Intent(getApplication(), CuponBox.class);
                     startActivity(intent);
                     break;
 

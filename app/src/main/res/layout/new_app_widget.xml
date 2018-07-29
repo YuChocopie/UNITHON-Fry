@@ -2,33 +2,34 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:layout_margin="15dp"
-  android:padding="@dimen/widget_margin">
+  android:padding="@dimen/widget_margin"
+  android:background="#000000">
 
   <TextView
     android:id="@+id/appwidget_text"
     android:layout_width="wrap_content"
     android:layout_height="75dp"
-    android:layout_marginTop="17dp"
-    android:layout_marginLeft="55dp"
+    android:layout_marginTop="25dp"
+    android:layout_marginLeft="65dp"
     android:gravity="center_horizontal"
     android:layout_gravity="center"
     android:textColor="@color/home_text_color"
     android:textStyle="bold"
-    android:textSize="20sp"
+    android:textSize="22sp"
     android:text="36˚C" />
   <ImageView
     android:id="@+id/imageView2"
-    android:layout_width="120dp"
-    android:layout_height="120dp"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
     android:src="@drawable/rare_widget"
 
     />
 
   <ImageView
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="50dp"
-    android:layout_width="45dp"
-    android:layout_height="45dp"
+    android:layout_marginLeft="25dp"
+    android:layout_marginTop="65dp"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
     android:src="@drawable/happyyellow_1" />
 
 </RelativeLayout>

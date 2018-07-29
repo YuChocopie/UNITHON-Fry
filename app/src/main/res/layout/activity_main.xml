@@ -25,38 +25,45 @@
       android:layout_width="match_parent"
       android:layout_height="130dp"
       android:layout_gravity="bottom"
-      android:layout_marginBottom="8dp"
+      android:layout_marginBottom="16dp"
       app:layout_constraintBottom_toBottomOf="parent"
-      tools:layout_editor_absoluteX="16dp"
-      tools:ignore="MissingConstraints">
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp">
 
         <include layout="@layout/item_address_dong" />
 
-        <include
-          layout="@layout/item_global_bottom_bar"
-          tools:ignore="MissingConstraints"
-          tools:layout_editor_absoluteX="0dp"
-          tools:layout_editor_absoluteY="366dp" />
+        <ImageButton
+          android:id="@+id/button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="8dp"
+          android:layout_marginEnd="8dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:layout_marginStart="8dp"
+          android:background="@android:color/transparent"
+          android:src="@drawable/bottom_nav_map_normal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+          android:id="@+id/coupon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="8dp"
+          android:layout_marginEnd="8dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:layout_marginStart="8dp"
+          android:background="@android:color/transparent"
+          android:src="@drawable/bottom_nav_storge_normal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.851"
+          app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="185dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
 
     <ListView
         android:id="@+id/listView"
