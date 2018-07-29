@@ -21,6 +21,7 @@
     />
 
   <ImageView
+    android:id="@+id/egg_yellow"
     android:layout_width="135dp"
     android:layout_height="135dp"
     android:src="@drawable/angryyellow_2"

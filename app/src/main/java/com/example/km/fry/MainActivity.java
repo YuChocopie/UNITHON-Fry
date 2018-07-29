@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewDegree;
     private TextView textViewPlus;
     private TextView textViewAddress;
+    ImageView egg;
 
     private Context context = this;
     private ImageButton btn;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         textViewAddress = (TextView) findViewById(R.id.tv_address_dong);
         btn = (ImageButton) findViewById(R.id.button);
         listView = (ListView) findViewById(R.id.listView);
+        egg = (ImageView) findViewById(R.id.egg_yellow);
         btn.setOnClickListener(listener);
         couponBtn.setOnClickListener(listener);
         textViewPlus.setOnClickListener(listener);
@@ -181,6 +184,27 @@ public class MainActivity extends AppCompatActivity {
             textViewAddress.setText(region[3]);
 
             String tmp = list.get(0).getDegree();
+
+            String kmTemporary = tmp.substring(0, tmp.length() - 1);
+
+            int temp = Integer.parseInt(kmTemporary);
+
+            if (temp < 28)
+            {
+                egg.setImageResource(R.drawable.happyyellow_1);
+            }
+            else if (temp < 32)
+            {
+                egg.setImageResource(R.drawable.unhappyyellow_1);
+            }
+            else if (temp < 36)
+            {
+                egg.setImageResource(R.drawable.angryyellow_1);
+            }
+            else
+            {
+                egg.setImageResource(R.drawable.deadyellow_1);
+            }
             /*
 
             textViewDegree.setText(tmp.substring(0,2));

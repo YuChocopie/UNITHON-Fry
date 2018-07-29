@@ -2,8 +2,7 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:layout_margin="15dp"
-  android:padding="@dimen/widget_margin"
-  android:background="#000000">
+  android:padding="@dimen/widget_margin">
 
   <TextView
     android:id="@+id/appwidget_text"
