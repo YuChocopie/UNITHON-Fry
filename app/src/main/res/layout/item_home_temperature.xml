@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="85dp"
+  android:orientation="horizontal"
+  android:layout_marginTop="20dp"
+  android:layout_marginLeft="32dp"
+  android:layout_marginRight="32dp"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <TextView
+    android:id="@+id/tv_temperature"
+    android:layout_width="wrap_content"
+    android:layout_height="85dp"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center"
+
+    android:textColor="@color/home_text_color"
+    android:textStyle="bold"
+    android:textSize="@dimen/text_size_67"
+    android:text="36" />
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="top"
+
+    android:layout_marginBottom="58dp"
+    android:textStyle="bold"
+    android:textColor="@color/home_text_color"
+    android:textSize="50sp"
+      android:text="˚" />
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="36.6dp"
+    android:textColor="@color/home_text_color"
+    android:textSize="35.3sp"
+      android:text="C" />
+  <TextView
+      android:id="@+id/plus"
+    android:layout_gravity="right"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="14dp"
+    android:textSize="13.6sp"
+    android:textColor="#ffa11e"
+      android:clickable="true"
+    android:letterSpacing="0.09"
+    android:lineSpacingExtra="2.4sp"
+    android:gravity="end"
+    android:textStyle="bold"
+      android:text="더보기"
+    />
+
+</LinearLayout>

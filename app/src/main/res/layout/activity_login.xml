@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="640dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/signin_bg"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/typelogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/signin_whitebg"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
+
+    <ImageButton
+        android:id="@+id/login_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/signup_tap"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="343dp"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:id="@+id/login_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/signin_tap"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="28dp"
+        android:background="@android:color/transparent" />
+
+</RelativeLayout>

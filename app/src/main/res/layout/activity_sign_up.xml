@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="640dp" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/signin_bg"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sign_up"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="148dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/up_id_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/id_textbox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="251dp"/>
+
+        <EditText
+            android:id="@+id/up_id_et"
+            android:layout_width="222dp"
+            android:layout_height="32dp"
+            android:layout_alignRight="@+id/up_id_image"
+            android:layout_alignTop="@+id/up_id_image"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="18dp"
+            android:background="@android:color/transparent"
+            android:inputType="text" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/up_pw_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pw_textbox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="331dp"/>
+
+        <EditText
+            android:id="@+id/up_pw_et"
+            android:layout_width="222dp"
+            android:layout_height="32dp"
+            android:layout_alignRight="@+id/up_pw_image"
+            android:layout_alignTop="@+id/up_pw_image"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="18dp"
+            android:background="@android:color/transparent"
+            android:inputType="textPassword" />
+
+    </RelativeLayout>
+
+
+    <ImageButton
+        android:id="@+id/up_config"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sign_check_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="524dp"
+        android:background="@android:color/transparent"/>
+
+
+</RelativeLayout>

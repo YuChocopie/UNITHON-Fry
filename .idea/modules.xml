@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\xowns\UniTon\Fry.iml" filepath="C:\Users\xowns\UniTon\Fry.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UniTon.iml" filepath="$PROJECT_DIR$/UniTon.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+<<<<<<< HEAD
+=======
+      <module fileurl="file://$PROJECT_DIR$/git.iml" filepath="$PROJECT_DIR$/git.iml" />
+>>>>>>> e676be7a2a84d94ab477fd2d4cd8799134f9fc60
     </modules>
   </component>
 </project>

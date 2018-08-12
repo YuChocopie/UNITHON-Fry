@@ -2,7 +2,6 @@ package com.example.km.fry;
 
 import android.app.FragmentManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -13,6 +12,7 @@ import android.location.LocationListener;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -84,7 +84,7 @@ public class HomeActivity  extends AppCompatActivity implements OnMapReadyCallba
         MarkerOptions markerOptions_my = new MarkerOptions();
         markerOptions_my.position(My);
         markerOptions_my.title("나의 위치");
-      //  markerOptions_my.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.now)));
+        markerOptions_my.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spot_me)));
         markerOptions_my.snippet(my_address);
 
         googleMap.addMarker(markerOptions_my);
@@ -124,7 +124,7 @@ public class HomeActivity  extends AppCompatActivity implements OnMapReadyCallba
     }
 
     // 위도, 경도 -> 주소값
-    String getAddress(Context context, double lat, double lon) {
+    static String getAddress(Context context, double lat, double lon) {
 
         Geocoder geocoder;geocoder = new Geocoder(context, Locale.getDefault());
         List<Address> addresses = null;
@@ -245,6 +245,7 @@ public class HomeActivity  extends AppCompatActivity implements OnMapReadyCallba
                     MarkerOptions markerOptions = new MarkerOptions();
                     markerOptions.position(latLng);
                     markerOptions.title(place.getName());
+                    markerOptions.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spot_bank_defult)));
                     markerOptions.snippet(markerSnippet);
                     Marker item = map.addMarker(markerOptions);
                     previous_marker.add(item);

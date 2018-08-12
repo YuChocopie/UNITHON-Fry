@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:background="#ffffff"
+    android:layout_marginTop="16dp">
+
+    <TextView
+        android:id="@+id/tv_hour"
+      android:layout_gravity="center_vertical"
+      android:layout_width="40dp"
+      android:layout_height="16dp"
+      android:textSize="12sp"
+      android:textColor="#99000000"
+      tools:text="오후 12"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="16dp"/>
+
+      <View
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+          android:layout_marginLeft="5dp"
+        android:background="#ffa11e"/>.
+      <TextView
+        android:id="@+id/tv_degree"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="14dp"
+        android:layout_width="70dp"
+        android:layout_height="59dp"
+        android:gravity="center_horizontal"
+        android:textColor="#fd721a"
+        android:textSize="46.7sp"
+        tools:text="36˚" />
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_gravity="center_vertical"
+    >
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:orientation="horizontal"
+      android:layout_marginTop="13dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginEnd="20dp"
+      >
+
+      <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/uv"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/humidity"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/poision"
+        android:layout_weight="1"
+        />
+      <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/angry"
+        android:layout_weight="1"
+        />
+
+
+    </LinearLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"
+      android:layout_marginStart="20dp"
+      android:layout_marginEnd="20dp"
+      android:layout_weight="1">
+      <TextView
+        android:id="@+id/tv_uv"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="15dp"
+        android:text="자외선"
+        android:textColor="#de000000"
+        android:textSize="11.7sp"/>
+      <TextView
+        android:id="@+id/tv_humidity"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="15dp"
+        android:text="습도"
+        android:textColor="#de000000"
+        android:textSize="11.7sp"/>
+
+      <TextView
+        android:id="@+id/tv_poison"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="15dp"
+        android:textColor="#de000000"
+        android:textSize="11.7sp"
+        android:text="자외선"/>
+      <TextView
+        android:id="@+id/tv_unhappy"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="30dp"
+        android:layout_height="15dp"
+        android:text="불쾌지수"
+        android:textColor="#de000000"
+        android:textSize="11.7sp"/>
+
+
+    </LinearLayout>
+  </LinearLayout>
+
+  </LinearLayout>

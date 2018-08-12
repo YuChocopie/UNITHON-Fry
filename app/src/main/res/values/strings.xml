@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Fry</string>
+  <string name="app_name">Fry</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="appwidget_text">36˚C</string>
+  <string name="add_widget">Add widget</string>
 </resources>
