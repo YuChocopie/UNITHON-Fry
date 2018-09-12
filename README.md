@@ -2,17 +2,14 @@
 UNITHON 7TH 6TEAM
 ## Uniton 해커톤 6팀
 
-![img1](.\app\src\main\res\drawable\img1.png)
+![img1](https://github.com/AnkyoungMoo/UNITHON-Fry/blob/master/app/src/main/res/drawable/img1.png)
 
-![img1](.\app\src\main\res\drawable\img2.png)
+![img2](https://github.com/AnkyoungMoo/UNITHON-Fry/blob/master/app/src/main/res/drawable/img2.png)
 
-![img1](.\app\src\main\res\drawable\img3.png)
+![img3](https://github.com/AnkyoungMoo/UNITHON-Fry/blob/master/app/src/main/res/drawable/img3.png)
 
-![img1](.\app\src\main\res\drawable\img4.png)
+![img4](https://github.com/AnkyoungMoo/UNITHON-Fry/blob/master/app/src/main/res/drawable/img4.png)
 
- 
-
- 
 
 ## 팀원
 
